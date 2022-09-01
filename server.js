@@ -22,9 +22,13 @@ var server = http.createServer(function(request, response){
   if(path === '/'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(`你好!`)
+    response.write(`
+    <!DOCTYPE html>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <h1>你好!</h1>
+    `)
     response.end()
-  } else if(path === '/x'){
+  } else if(path === '/style'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/css;charset=utf-8')
     response.write(`h1{color: red;}`)
